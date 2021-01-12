@@ -46,14 +46,14 @@ i:
 install
 ```
 
-When prompted, specify 'I' as the drive letter containing the distribution,
+When prompted, specify 'i' as the drive letter containing the distribution,
 and choose the default path of C:\HITECH to install the files.
 
 When done, remember to review changes to the AUTOEXEC.BAT file and 
 remove the drive substitution before re-booting.
 
 ```
-c:
+cd c:\
 subst i: /d
 ```
 
