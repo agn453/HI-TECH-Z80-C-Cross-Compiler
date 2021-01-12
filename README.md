@@ -1,4 +1,4 @@
-# HI-TECH-C-Z80-Cross-Compiler
+# HI-TECH-Z80-C-Cross-Compiler
 
 This is the HI-TECH Z80 C Cross Compiler (MS-DOS) v4.11
 
@@ -12,7 +12,7 @@ The external download link for this software is
 http://www.safetycritical.info/pub/Microchip_Hitech_C_Z80.zip
 
 and it is also available from GitHub from
-[here](https://raw.githubusercontent.com/agn453/HI-TECH-C-Z80-Cross-Compiler/master/Microchip_Hitech_C_Z80.zip).
+[here](https://raw.githubusercontent.com/agn453/HI-TECH-Z80-C-Cross-Compiler/master/Microchip_Hitech_C_Z80.zip).
 
 Please read and keep a copy of the licence agreement in the
 LICENSE file with all copies of these files.
@@ -49,10 +49,13 @@ install
 When prompted, specify 'I' as the drive letter containing the distribution,
 and choose the default path of C:\HITECH to install the files.
 
-When done, remember to review changes to the AUTOEXEC.BAT file and
+When done, remember to review changes to the AUTOEXEC.BAT file and 
+remove the drive substitution before re-booting.
 
 ```
 c:
 subst i: /d
 ```
 
+--
+Tony Nicholson 12-Jan-2021
