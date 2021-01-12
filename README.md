@@ -41,7 +41,7 @@ mkdir ins
 xcopy /s c:\kits\hitechc\diska\*.* \ins
 xcopy /s c:\kits\hitechc/diskb\*.* \ins
 rem Mount the folder as drive I:
-substi i: \ins
+subst i: \ins
 i:
 install
 ```
