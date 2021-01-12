@@ -1,0 +1,43 @@
+.SUFFIXES:	.c .obj .as
+BIN	= /usr/hitech/bin
+LIB	= ../../lib
+AR	= $(BIN)/libr r
+C	= $(BIN)/zc -q
+CFLAGS	= -x -O
+LD	= $(BIN)/link
+ENHUFF	= $(BIN)/enhuff
+
+.c.obj:
+	$(C) $(CFLAGS) -c $<
+.as.obj:
+	$(AS) -j $<
+
+SRCS	= printf.c assert.c \
+	  vprintf.c vsprintf.c vscanf.c vsscanf.c \
+	  sprintf.c doprnt.c \
+	  gets.c puts.c putchar.c \
+	  sscanf.c scanf.c doscan.c ungetc.c \
+	  cgets.c cputs.c
+
+OBJS	= printf.obj assert.obj \
+	  vprintf.obj vsprintf.obj vscanf.obj vsscanf.obj \
+	  sprintf.obj doprnt.obj \
+	  gets.obj puts.obj putchar.obj \
+	  sscanf.obj scanf.obj doscan.obj ungetc.obj \
+	  cgets.obj cputs.obj
+
+zlibstds.lib:	$(OBJS)
+	$(AR) zlibstds.lib $(OBJS)
+
+clean:
+	-rm -f *.lib *.obj
+
+print:
+	print Makefile $(SRCS)
+
+huff:
+	-rm stdio.huf
+	$(ENHUFF) -a stdio.huf Makefile $(SRCS)
+
+tar:
+	tar cv Makefile $(SRCS)

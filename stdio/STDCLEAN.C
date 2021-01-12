@@ -1,0 +1,47 @@
+#include	<stdio.h>
+
+_cleanup(void)
+{
+	uchar	i;
+	register struct _iobuf *	ip;
+
+	i = _NFILE;
+	ip = _iob;
+	do {
+		fclose(ip);
+		ip++;
+	} while(--i);
+}
+/*
+ *	Initial setup for stdio
+ */
+
+struct _tfiles	_tfiles[_MAXTFILE];
+char	_sibuf[BUFSIZ];
+FILE	_iob[_NFILE] =
+{
+	{
+		_sibuf,
+		0,
+		_sibuf,
+		_IOREAD|_IOMYBUF,
+		0,			/* stdin */
+		BUFSIZ
+	},
+	{
+		(char *)0,
+		0,
+		(char *)0,
+		_IOWRT,
+		1,			/* stdout */
+		0
+	},
+	{
+		(char *)0,
+		0,
+		(char *)0,
+		_IOWRT|_IONBF,
+		2,			/* stderr */
+		0
+	},
+};

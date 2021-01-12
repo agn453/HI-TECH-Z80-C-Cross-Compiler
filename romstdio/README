@@ -1,0 +1,14 @@
+To create a ROM type library:
+
+Compile all the .C files here:
+
+zc -O -x -c *.c
+
+Then replace them in the library,
+
+libr r zlibc.lib *.obj
+
+You may also need to edit, recompile, and replace in the library
+the file getch.c from cpm.huf. This has routines to input and output
+single characters. It currently uses bdos calls to do it, so you may
+need to change it to access a serial port or whatever.
