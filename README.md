@@ -39,7 +39,7 @@ rem  Assumes files are located in C:\KITS\HITECHC
 cd c:\
 mkdir ins
 xcopy /s c:\kits\hitechc\diska\*.* \ins
-xcopy /s c:\kits\hitechc/diskb\*.* \ins
+xcopy /s c:\kits\hitechc\diskb\*.* \ins
 rem Mount the folder as drive I:
 subst i: \ins
 i:
@@ -58,4 +58,4 @@ subst i: /d
 ```
 
 --
-Tony Nicholson 12-Jan-2021
+Tony Nicholson 10-May-2021
